@@ -1,0 +1,16 @@
+<h1>Your score : <%= session[:score] %></h1>
+
+
+<%if @included %>
+  <% if @english_word %>
+    <p><strong>Congratulations !</strong> <%= @word %> is a valid English word</p>
+  <% else %>
+    <p><strong>SORRY</strong> but <%= @word %> doesn't seem to be an English word</p>
+  <% end %>
+
+<% else %>
+  <p><strong>SORRY</strong> but <%= @word %> can't be build out of <%= @letters.join(" ") %></p>
+
+<% end %>
+
+<%= link_to "Play again", new_path %>
